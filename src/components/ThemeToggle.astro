@@ -1,0 +1,54 @@
+<button id="themeToggle" class="btn">Toggle Theme</button>
+
+<style>
+  #themeToggle {
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    color: var(--accent-secondary);
+    padding: 0.85rem 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: relative;
+    transition:
+      color 0.3s,
+      transform 0.3s;
+    overflow: hidden;
+  }
+
+  #themeToggle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(
+      90deg,
+      var(--accent-neon),
+      var(--accent-secondary)
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  #themeToggle:hover {
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--accent-secondary);
+  }
+
+  #themeToggle:active {
+    transform: scale(0.97);
+  }
+</style>
+<script>
+  const btn = document.getElementById("themeToggle")!;
+  btn.addEventListener("click", () => {
+    document.documentElement.classList.toggle("light");
+  });
+</script>

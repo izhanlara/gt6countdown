@@ -1,11 +1,172 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <title>GTA 6 Countdown</title>
+	<link rel="icon" href="../../public/favicon.ico">
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&display=swap");
+
+      :root {
+        --bg-dark: #090808;
+        --bg-light: #f9f9f9;
+        --text-dark: #e9e9e9;
+        --text-light: #111111;
+        --accent-neon: #ff2d55;
+        --accent-secondary: #00d8ff;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Orbitron", system-ui, sans-serif;
+        background: var(--bg-dark);
+        color: var(--text-dark);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        transition:
+          background 0.4s ease,
+          color 0.4s ease;
+      }
+
+      .light body {
+        background: var(--bg-light);
+        color: var(--text-light);
+      }
+      .light .btn {
+        color: #111 !important;
+        border-color: var(--accent-neon);
+        background: #fff;
+        box-shadow: 0 0 8px rgba(255, 0, 85, 0.3);
+      }
+
+      .light .btn:hover {
+        background: var(--accent-neon);
+        color: #fff !important;
+        box-shadow: 0 0 15px var(--accent-neon);
+      }
+
+      h1 {
+        font-size: 3.8rem;
+        margin: 0.5rem 0 1rem;
+        letter-spacing: 2px;
+        text-shadow:
+          0 0 12px var(--accent-neon),
+          0 0 20px var(--accent-secondary);
+        animation: fadeInDown 1s ease-out;
+      }
+
+      .countdown {
+        font-size: 2.8rem;
+        margin: 1.5rem 0;
+        letter-spacing: 1px;
+        color: var(--accent-neon);
+        text-shadow: 0 0 8px var(--accent-neon);
+        animation: pulseNeon 2s infinite ease-in-out;
+      }
+
+      .actions {
+        display: flex;
+        gap: 1.2rem;
+        margin-top: 2.5rem;
+        animation: fadeInUp 1s ease-out 0.5s both;
+      }
+
+      .btn {
+        background: transparent;
+        color: var(--text-dark);
+        border: 2px solid var(--accent-neon);
+        padding: 0.85rem 1.8rem;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition:
+          background 0.3s,
+          transform 0.2s,
+          box-shadow 0.3s;
+      }
+
+      .btn:hover {
+        background: var(--accent-neon);
+        color: #fff;
+        transform: scale(1.05);
+        box-shadow: 0 0 20px var(--accent-neon);
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulseNeon {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.85;
+          transform: scale(1.04);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>GTA 6 Countdown</h1>
+    <div id="countdown" class="countdown">Loading...</div>
+
+    <div class="actions">
+      <a href="https://www.rockstargames.com/gta6" target="_blank" class="btn"
+        >Official Page</a
+      >
+      <ThemeToggle />
+    </div>
+    <script>
+      const countdownEl = document.getElementById("countdown")!;
+      const release = new Date("2026-11-19T00:00:00");
+
+      function updateCountdown() {
+        const now = new Date();
+        const diff = release.getTime() - now.getTime();
+        if (diff <= 0) return (countdownEl.textContent = "It's today!");
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const m = Math.floor((diff / (1000 * 60)) % 60);
+        const s = Math.floor((diff / 1000) % 60);
+        countdownEl.textContent = `${d}d ${h}h ${m}m ${s}s`;
+      }
+
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+    </script>
+  </body>
+</html>
