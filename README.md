@@ -1,46 +1,90 @@
-# Astro Starter Kit: Basics
+# 🕹️ GTA VI Countdown
 
-```sh
-npm create astro@latest -- --template basics
+Un sitio web minimalista creado con **Astro** que muestra un contador en tiempo real hasta la fecha de lanzamiento de **Grand Theft Auto VI**.  
+Inspirado en el diseño oscuro y elegante de la web oficial de Rockstar Games.
+
+---
+
+## 🚀 Características
+
+- ⏱️ **Contador en tiempo real** hasta la fecha de salida de GTA VI.  
+- 🌗 **Cambio de tema** claro / oscuro con un solo clic.  
+- 🔗 **Botón de acceso directo** a la [web oficial de GTA VI](https://www.rockstargames.com/gta6).  
+- 🖤 **Diseño minimalista y responsivo**, centrado en el contador.  
+
+---
+
+## 🧩 Tecnologías utilizadas
+
+- [Astro](https://astro.build/) — Framework principal del proyecto.  
+- HTML, CSS y TypeScript nativo.  
+- JavaScript puro para el temporizador y el cambio de tema.  
+
+---
+
+## 📁 Estructura del proyecto
+
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
 ├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+│   ├── favicon.png 
+├── src/
+│   ├── pages/
+│   │   └── index.astro  
+│   └── styles/
+│       └── style.css     
+├── package.json
+└── astro.config.mjs
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+````
 
-## 🧞 Commands
+## ⚙️ Instalación y uso
 
-All commands are run from the root of the project, from a terminal:
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tuusuario/gta6-countdown.git
+   cd gta6-countdown
+   ````
+2. Instala las dependencias:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+   ```bash
+   npm install
+   ```
 
-## 👀 Want to learn more?
+3. Inicia el servidor de desarrollo:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+   ```bash
+   npm run dev
+   ```
+
+4. Abre en tu navegador:
+
+   ```
+   http://localhost:4321
+   ```
+
+---
+
+## 🕶️ Personalización
+
+* Puedes cambiar la **fecha de lanzamiento** editando la variable `releaseDate` en `index.astro`.
+* El favicon puede reemplazarse por otro icono en `public/favicon.png`.
+
+---
+
+## 📅 Fecha de lanzamiento oficial
+
+**19 de noviembre del 2026**
+
+---
+
+## 🧠 Licencia
+
+Este proyecto es de código abierto y se distribuye bajo la licencia **MIT**.
+
+---
+
+## 💡 Créditos
+
+Desarrollado por [Izhan Lara](https://izhanlara.com) con ❤️
+Inspirado en el estilo visual de [Rockstar Games](https://www.rockstargames.com/).
