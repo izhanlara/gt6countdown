@@ -1,31 +1,30 @@
 # 🕹️ GTA VI Countdown
 
-Un sitio web minimalista creado con **Astro** que muestra un contador en tiempo real hasta la fecha de lanzamiento de **Grand Theft Auto VI**.  
-Inspirado en el diseño oscuro y elegante de la web oficial de Rockstar Games.
+A **minimalist website** built with **Astro** that displays a real-time countdown to the release date of **Grand Theft Auto VI**.
+Inspired by the dark and elegant design of Rockstar Games’ official website.
 
 ---
 
-## 🚀 Características
+## 🚀 Features
 
-- ⏱️ **Contador en tiempo real** hasta la fecha de salida de GTA VI.  
-- 🌗 **Cambio de tema** claro / oscuro con un solo clic.  
-- 🔗 **Botón de acceso directo** a la [web oficial de GTA VI](https://www.rockstargames.com/gta6).  
-- 🖤 **Diseño minimalista y responsivo**, centrado en el contador.  
-
----
-
-## 🧩 Tecnologías utilizadas
-
-- [Astro](https://astro.build/) — Framework principal del proyecto.  
-- HTML, CSS y TypeScript nativo.  
-- JavaScript puro para el temporizador y el cambio de tema.  
+* ⏱️ **Real-time countdown** to GTA VI’s release date.
+* 🌗 **Light / dark theme switch** with a single click.
+* 🔗 **Shortcut button** to the [official GTA VI website](https://www.rockstargames.com/gta6).
+* 🖤 **Minimalist and responsive design**, fully focused on the countdown.
 
 ---
 
-## 📁 Estructura del proyecto
+## 🧩 Technologies Used
+
+* [Astro](https://astro.build/) — Main framework of the project.
+* Native HTML, CSS, and TypeScript.
+* Pure JavaScript for the timer and theme toggle.
+
+---
+
+## 📁 Project Structure
 
 ```
-
 ├── public/
 │   ├── favicon.png 
 ├── src/
@@ -35,29 +34,32 @@ Inspirado en el diseño oscuro y elegante de la web oficial de Rockstar Games.
 │       └── style.css     
 ├── package.json
 └── astro.config.mjs
+```
 
-````
+---
 
-## ⚙️ Instalación y uso
+## ⚙️ Installation & Usage
 
-1. Clona el repositorio:
+1. Clone the repository:
+
    ```bash
-   git clone https://github.com/tuusuario/gta6-countdown.git
+   git clone https://github.com/yourusername/gta6-countdown.git
    cd gta6-countdown
-   ````
-2. Instala las dependencias:
+   ```
+
+2. Install dependencies:
 
    ```bash
    npm install
    ```
 
-3. Inicia el servidor de desarrollo:
+3. Start the development server:
 
    ```bash
    npm run dev
    ```
 
-4. Abre en tu navegador:
+4. Open your browser and go to:
 
    ```
    http://localhost:4321
@@ -65,26 +67,28 @@ Inspirado en el diseño oscuro y elegante de la web oficial de Rockstar Games.
 
 ---
 
-## 🕶️ Personalización
+## 🕶️ Customization
 
-* Puedes cambiar la **fecha de lanzamiento** editando la variable `releaseDate` en `index.astro`.
-* El favicon puede reemplazarse por otro icono en `public/favicon.png`.
-
----
-
-## 📅 Fecha de lanzamiento oficial
-
-**19 de noviembre del 2026**
+* You can change the **release date** by editing the `releaseDate` variable inside `index.astro`.
+* The favicon can be replaced with your own icon in `public/favicon.png`.
 
 ---
 
-## 🧠 Licencia
+## 📅 Official Release Date
 
-Este proyecto es de código abierto y se distribuye bajo la licencia **MIT**.
+**November 19, 2026**
 
 ---
 
-## 💡 Créditos
+## 🧠 License
 
-Desarrollado por [Izhan Lara](https://izhanlara.com) con ❤️
-Inspirado en el estilo visual de [Rockstar Games](https://www.rockstargames.com/).
+This project is open-source and distributed under the **MIT License**.
+
+---
+
+## 💡 Credits
+
+Developed by [Izhan Lara](https://izhanlara.com) with ❤️
+Inspired by the visual style of [Rockstar Games](https://www.rockstargames.com/).
+
+---
